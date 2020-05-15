@@ -1,0 +1,44 @@
+<%- include("partials/header") -%>
+<div class="container p-4 my-5">
+<div class="container p-4">
+    <center>
+        <a id="askQuestion" href="/ask_question">Ask Question</a>
+</center>
+    
+</div>
+
+
+<div class="container">
+
+    
+        <% questions.forEach(function(question) { %> 
+            <a href="/<%= question.title %>">
+                <div class="bg question p-3 m-2">
+                    <div class="row">
+                        <div class="col">
+                            <h2><%= question.title %> </h2>
+                        </div>
+                        <div class="col">
+                            <p class="hoverQuestion">Answer</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <p><%= question.description.substring(0, 140)+ " ..."%></p>
+                        </div>
+                        
+                    </div>
+               </div>
+           </a>    
+         <% }); %>  
+    
+    
+
+</div>
+</div>
+
+
+<%- include("partials/footer") -%>
+
+

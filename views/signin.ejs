@@ -1,0 +1,17 @@
+<%- include("partials/header") -%>
+
+<form class="formsignin" action="/signin" method="post">
+
+  <div class="formsignindiv">
+<center>
+<h1>Sign <span>In</span></h1>
+
+
+  <input type="email" name="email" >
+<input type="password" name="password" >
+<h3><%= inc %></h3>
+<button type="submit" name="button" class="submitbutton">Submit</button>
+</center>
+    </div>
+</form>
+<%- include("partials/footer") -%>

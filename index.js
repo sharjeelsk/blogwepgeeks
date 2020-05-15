@@ -1,11 +1,20 @@
+<<<<<<< HEAD
 
+=======
+const inc=""
+const notfound="not a valid user"
+>>>>>>> 148a0fc877b462e34827de40dc0918a7b688f9b9
 
 const express=require("express");
 const bodyparser=require('body-parser');
 const ejs=require('ejs');
 const mongoose=require('mongoose');
 const request=require('request');
+<<<<<<< HEAD
 const inc= "";
+=======
+
+>>>>>>> 148a0fc877b462e34827de40dc0918a7b688f9b9
 const app=express();
 
 app.set('view engine', 'ejs')
@@ -16,6 +25,7 @@ const clientinfo={
   email:String,
   password:String
 };
+<<<<<<< HEAD
 
 const answersSchema = {
   description: String,
@@ -32,6 +42,9 @@ const QuestionsSchema={
 const Client = mongoose.model("Client",clientinfo);
 const Answer = mongoose.model("Answer", answersSchema)
 const Question = mongoose.model("Question",QuestionsSchema);
+=======
+const Client = mongoose.model("Client",clientinfo)
+>>>>>>> 148a0fc877b462e34827de40dc0918a7b688f9b9
 app.get("/",function(req,res){
 
   res.render("home")
@@ -40,6 +53,7 @@ app.get("/signup",function(req,res){
   res.render("signup")
 })
 app.get("/signin",function(req,res){
+<<<<<<< HEAD
   res.render("signin",{inc:inc})
 })
 
@@ -75,6 +89,12 @@ app.post("/ask_question", function (req, res) {
 res.redirect("/questions");
 });
 
+=======
+  const inc=""
+const notfound="not a valid user"
+  res.render("signin")
+})
+>>>>>>> 148a0fc877b462e34827de40dc0918a7b688f9b9
 app.post("/signup",function(req,res){
 const  newclient = new Client({
   email:req.body.eml,
@@ -90,6 +110,11 @@ newclient.save(function(err){
 
 });
 app.post("/signin",function(req,res){
+<<<<<<< HEAD
+=======
+  const inc=""
+const notfound="not a valid user"
+>>>>>>> 148a0fc877b462e34827de40dc0918a7b688f9b9
   const username=req.body.email;
   const password=req.body.password;
   Client.findOne({email:username},function(err,findclient){
@@ -99,8 +124,12 @@ app.post("/signin",function(req,res){
         res.render("home");
       }
       else{
+<<<<<<< HEAD
         inc = "sorry not valid user";
       res.render("signin",{inc: inc});
+=======
+      res.render("signin",{inc:notfound});
+>>>>>>> 148a0fc877b462e34827de40dc0918a7b688f9b9
       }
     }
 
@@ -110,6 +139,7 @@ app.post("/signin",function(req,res){
   })
 });
 
+<<<<<<< HEAD
 app.get("/:questionTitle", function(req,res){
   const questionTitle = req.params.questionTitle;
   Question.findOne({title: questionTitle}, function(err, foundQuestion){
@@ -141,6 +171,8 @@ app.post("/:questionId", function(req, res){
   })
 
 
+=======
+>>>>>>> 148a0fc877b462e34827de40dc0918a7b688f9b9
 app.listen(3000,function(){
   console.log("server started")
 })

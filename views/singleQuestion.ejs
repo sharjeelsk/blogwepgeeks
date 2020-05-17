@@ -1,0 +1,72 @@
+<%- include("partials/header") -%>
+<div class="container p-4 my-5">
+<div class="container bg p-4 my-2">
+    
+        <label for="">Title</label> 
+        <h2 class="my-2"><%= title %> </h2>
+    
+        
+        <hr>
+
+
+         <label for="">Description</label>
+        <p class="my-2"><%= description %> </p>
+      
+        
+        <hr>
+       
+        <label for="">Code</label>
+        <p class="code p-3"><%= code %> </p>
+
+</div>
+
+<div class="container bg p-4 my-2">
+        <h2 class="my-2">Answers</h2>
+        
+        <hr>
+        
+        
+    <% answers.forEach(function(answer) { %> 
+              
+        <div class="title border">
+            <div class="row">
+                <div class="col">
+                    <p><%= answer.description %> </p>
+                </div>
+                
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <p class="code p-3"><%= answer.code %> </p>
+                </div>
+                
+            </div>
+       </div>
+      
+ <% }); %>  
+
+       
+        
+
+</div>
+
+<div class="container bg p-4">
+        <h2 class="my-2">Your Answer</h2>
+        <form action="/<%= _id %>" method="post">
+                <div class="form-group">
+                    <label for="">Answer Description</label>
+                    <textarea class="form-control" name="answerDescription" id="" cols="auto" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Code</label>
+                    <textarea class="form-control" name="answerCode" id="" cols="auto" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit" name="button">Post Your Answer</button>
+            </form>
+
+        </div>
+</div>
+
+
+<%- include("partials/footer") -%>
